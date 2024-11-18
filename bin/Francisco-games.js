@@ -1,2 +1,2 @@
 #!/usr/bin/env node
-console.log('¡Bienvenido a Francisco Ganes!');
+console.log('¡Bienvenido a Francisco Games!');

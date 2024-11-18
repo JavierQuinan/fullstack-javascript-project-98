@@ -10,7 +10,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "install": "npm ci",
-    "brian-games": "node bin/Francisco-games.js",
+    "Francisco-games": "node bin/Francisco-games.js",
     "publish-dry-run": "npm publish --dry-run"
   },
   "repository": {

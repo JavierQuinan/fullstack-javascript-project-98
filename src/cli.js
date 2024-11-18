@@ -1,8 +1,7 @@
 // @ts-check
-import readlineSync from 'readline-sync';
+import readlineSync from "readline-sync";
 
-
-/** 
+/**
  * Función para saludar al usuario
  */
 

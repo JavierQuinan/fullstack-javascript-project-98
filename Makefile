@@ -1,8 +1,8 @@
 install:
      npm ci
 
-Francisco-games:
-     node bin/Francisco-games.js
+Brian-games:
+     node bin/Brain-games.js
 
 publish:
      npm publish --dry-run

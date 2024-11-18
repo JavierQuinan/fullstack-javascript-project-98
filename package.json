@@ -5,12 +5,12 @@
   "type": "module",
   "main": "index.js",
   "bin": {
-    "Francisco-games": "bin/Francisco-games.js"
+    "Francisco-games": "bin/Brain-games.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "install": "npm ci",
-    "Francisco-games": "node bin/Francisco-games.js",
+    "Francisco-games": "node bin/Brain-games.js",
     "publish-dry-run": "npm publish --dry-run"
   },
   "repository": {
@@ -18,7 +18,7 @@
     "url": "git+https://github.com/JavierQuinan/fullstack-javascript-project-98.git"
   },
   "keywords": [
-    "Francisco",
+    "Brain",
     "games",
     "javascript",
     "cli",

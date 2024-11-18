@@ -2,9 +2,16 @@
   "name": "@hexlet/code",
   "version": "1.0.0",
   "description": "Juego interactivo en Node.js",
+  "type": "module",
   "main": "index.js",
+  "bin": {
+    "Francisco-games": "bin/Francisco-games.js"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "install": "npm ci",
+    "brian-games": "node bin/Francisco-games.js",
+    "publish-dry-run": "npm publish --dry-run"
   },
   "repository": {
     "type": "git",

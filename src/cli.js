@@ -6,11 +6,10 @@ import readlineSync from 'readline-sync';
  * Función para saludar al usuario
  */
 
- const greetUser = () => {
-      console.log('¡Bienvenido a Brian Games!');
-      const name = readlineSync.question('¿Cuál es tu nomnbre? ');
-      console.log(' ¡Hola, ${name}!');
+const askUserName = () => {
+  console.log("¡Bienvenido a Brain Games!");
+  const name = readlineSync.question("¿Cuál es tu nombre? ");
+  console.log(`¡Hola, ${name}!`);
 };
 
-export default greetUser;
-
+export default askUserName;

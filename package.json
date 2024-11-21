@@ -11,7 +11,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "install": "npm ci",
     "Brain-games": "node bin/Brain-games.js",
-    "publish-dry-run": "npm publish --dry-run"
+    "publish-dry-run": "npm publish --dry-run",
+    "lint": "npx eslint ."
   },
   "repository": {
     "type": "git",
@@ -32,5 +33,12 @@
   "homepage": "https://github.com/JavierQuinan/fullstack-javascript-project-98#readme",
   "dependencies": {
     "readline-sync": "^1.4.10"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.15.0",
+    "eslint": "^8.45.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.31.0",
+    "jest": "^29.7.0"
   }
 }

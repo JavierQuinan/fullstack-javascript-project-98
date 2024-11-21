@@ -1,0 +1,11 @@
+env:
+  browser: false
+  es2021: true
+  node: true
+
+extends:
+  - airbnb-base
+
+#rules:
+#no-console: off # Permite usar console.log
+#import/extensions: off # Permite extensiones en importaciones

@@ -6,3 +6,8 @@
 ## Asciinema Demo
 
 Puedes ver una demostración del juego aquí: [Enlace a Asciinema](https://asciinema.org/a/gHWYrpbjogKeKBrTtHNQKQM4c)
+
+## Demostración del Juego "Calculadora"
+
+Puedes ver una demostración del juego "Calculadora" en el siguiente enlace:
+(https://asciinema.org/a/vD2LNN0AASiuIpyPQV5sKazv3)

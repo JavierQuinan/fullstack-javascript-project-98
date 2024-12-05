@@ -10,4 +10,4 @@ Puedes ver una demostración del juego aquí: [Enlace a Asciinema](https://ascii
 ## Demostración del Juego "Calculadora"
 
 Puedes ver una demostración del juego "Calculadora" en el siguiente enlace:
-[![Ver la demostración en asciinema](https://asciinema.org/a/vD2LNN0AASiuIpyPQV5sKazv3.svg)](https://asciinema.org/a/vD2LNN0AASiuIpyPQV5sKazv3)
+[![Ver la demostración en asciinema](https://asciinema.org/a/vD2LNN0AASiuIpyPQV5sKazv3)

@@ -13,7 +13,7 @@
     "brain-prime": "./bin/brain-prime.js"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "install": "npm ci",
     "Brain-games": "node bin/Brain-games.js",
     "publish-dry-run": "npm publish --dry-run",

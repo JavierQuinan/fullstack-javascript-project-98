@@ -23,3 +23,10 @@ Este juego desafía al usuario a encontrar el número faltante en una progresió
 
 Puedes ver una demostración del juego aquí:
 [Enlace a Asciinema](https://asciinema.org/a/im7mJmfBS1KyMWE6yfOkWlHAY)
+
+# Brain Games - ¿Es primo?
+
+Este juego desafía al usuario a identificar si un número es primo o no.
+Puedes ver una demostración del juego aquí:
+[Enlace a Asciinema](https://asciinema.org/a/juHGPYeQuzXDnvMCYrWtu7Ir1)
+

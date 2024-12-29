@@ -11,3 +11,9 @@ Puedes ver una demostración del juego aquí: [Enlace a Asciinema](https://ascii
 
 Puedes ver una demostración del juego "Calculadora" en el siguiente enlace:
 (https://asciinema.org/a/vD2LNN0AASiuIpyPQV5sKazv3)
+
+# Brain Games - Máximo Común Divisor (MCD)
+
+Este juego desafía al usuario a encontrar el máximo común divisor entre dos números aleatorios.
+
+Puedes ver una demostración del juego aquí: [Enlace a Asciinema](https://asciinema.org/a/egJpUsit4zhnAFRz5AOBcFmFZ)

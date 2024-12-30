@@ -18,6 +18,12 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Use Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '21' # O usa '20.9.0' si prefieres mantenerte en Node 20
+          cache: 'npm'
+
       - name: Hexlet project check
         uses: hexlet/project-action@release
         with:

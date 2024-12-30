@@ -14,25 +14,11 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-
-      - name: Cache Node Modules
-        uses: actions/cache@v3
-        with:
-          path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-
-
-      - name: Use Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '20.9.0'
-          cache: 'npm'
 
       - name: Hexlet project check
         uses: hexlet/project-action@release
         with:
-         hexlet-id: ${{ secrets.HEXLET_ID }}
+          hexlet-id: ${{ secrets.HEXLET_ID }}

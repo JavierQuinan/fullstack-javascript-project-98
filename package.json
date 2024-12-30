@@ -40,8 +40,8 @@
     "readline-sync": "^1.4.10"
   },
   "devDependencies": {
-    "@eslint/js": "^9.15.0",
-    "eslint": "^8.45.0",
+    "@eslint/js": "^9.17.0",
+    "eslint": "^8.2.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.31.0",
     "jest": "^29.7.0"

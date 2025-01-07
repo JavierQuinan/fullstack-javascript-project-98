@@ -1,45 +1,35 @@
-import readlineSync from 'readline-sync';
+// src/even-game.js
 import askUserName from './cli.js';
-import { showWinMessage, showLoseMessage, showWelcomeMessage } from './messages.js';
+import { showWinMessage, showLoseMessage } from './messages.js';
 import { getRandomNumber } from './utils.js';
 
 /**
- * Determina si un número es par.
- * @param {number} num - Número a evaluar.
- * @returns {boolean} Verdadero si es par, falso si es impar.
- */
-const isEven = (num) => num % 2 === 0;
-
-/**
- * Juego de números pares (modularizado).
+ * Juego: ¿Es Par?
  */
 const startEvenGame = () => {
-  const userName = askUserName();
-  showWelcomeMessage(userName);
-  console.log('Responde "yes" si el número es par, de lo contrario responde "no".');
+    const userName = askUserName();
+    console.log('Responde "yes" si el número es par, de lo contrario responde "no".');
 
-  const roundsToWin = 3;
-  let correctAnswers = 0;
+    const roundsToWin = 3;
+    let correctAnswers = 0;
 
-  while (correctAnswers < roundsToWin) {
-    const randomNumber = getRandomNumber(1, 100);
-    console.log(`Pregunta: ${randomNumber}`);
-    const userAnswer = readlineSync.question('Tu respuesta: ').toLowerCase();
-    const correctAnswer = isEven(randomNumber) ? 'yes' : 'no';
+    while (correctAnswers < roundsToWin) {
+        const randomNumber = getRandomNumber(1, 100);
+        console.log(`Pregunta: ${randomNumber}`);
+        const isEven = randomNumber % 2 === 0;
+        const correctAnswer = isEven ? 'yes' : 'no';
+        const userAnswer = readlineSync.question('Tu respuesta: ').toLowerCase();
 
-    if (userAnswer === correctAnswer) {
-      console.log('¡Correcto!');
-      correctAnswers += 1;
-    } else {
-      console.log(`'${userAnswer}' es incorrecto ;(. La respuesta correcta era '${correctAnswer}'.`);
-      showLoseMessage();
-      console.log(`¡Intentémoslo de nuevo, ${userName}!`);
-      return; // Sale del juego si la respuesta es incorrecta
+        if (userAnswer === correctAnswer) {
+            console.log('¡Correcto!');
+            correctAnswers += 1;
+        } else {
+            showLoseMessage();
+            return;
+        }
     }
-  }
 
-  showWinMessage();
-  console.log(`¡Felicidades, ${userName}!`);
+    showWinMessage();
 };
 
 export default startEvenGame;

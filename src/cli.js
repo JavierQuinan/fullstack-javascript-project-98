@@ -7,7 +7,7 @@ import readlineSync from 'readline-sync';
  */
 const askUserName = () => {
     const name = readlineSync.question('¿Cuál es tu nombre? ');
-    return name;  // Solo retorna el nombre, sin mensajes adicionales
+    return name;
 };
 
 export default askUserName;

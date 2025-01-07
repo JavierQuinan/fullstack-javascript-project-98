@@ -17,10 +17,11 @@
     "install": "npm ci",
     "brain-games": "node bin/brain-games.js",
     "publish-dry-run": "npm publish --dry-run",
-    "lint": "npx eslint ."
+    "eslint": "eslint"
   },
   "repository": {
     "type": "git",
+    "author": "Francisco Quinteros",
     "url": "https://github.com/JavierQuinan/fullstack-javascript-project-98.git"
   },
   "keywords": [

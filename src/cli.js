@@ -2,13 +2,12 @@
 import readlineSync from 'readline-sync';
 
 /**
- * Función para saludar al usuario
+ * Solicita el nombre del usuario y lo retorna.
+ * @returns {string} - El nombre del usuario ingresado.
  */
-
 const askUserName = () => {
-  console.log('¡Bienvenido a Brain Games!');
-  const name = readlineSync.question('¿Cuál es tu nombre? ');
-  console.log(`¡Hola, ${name}!`);
+    const name = readlineSync.question('¿Cuál es tu nombre? ');
+    return name;  // Solo retorna el nombre, sin mensajes adicionales
 };
 
 export default askUserName;

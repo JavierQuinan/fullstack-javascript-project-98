@@ -1,13 +1,3 @@
-// src/messages.js
-
-/**
- * Muestra un mensaje de bienvenida con el nombre del usuario.
- * @param {string} name - El nombre del usuario.
- */
-export const showWelcomeMessage = (name) => {
-    console.log(`¡Hola, ${name}! Bienvenido al juego.`);
-};
-
 /**
  * Muestra un mensaje de victoria.
  */

@@ -13,7 +13,7 @@
     "brain-prime": "bin/brain-prime.js"
   },
   "scripts": {
-    "test": "npx jest",
+    "test": "jest --coverage",
     "install": "npm ci",
     "brain-games": "node bin/brain-games.js",
     "publish-dry-run": "npm publish --dry-run",

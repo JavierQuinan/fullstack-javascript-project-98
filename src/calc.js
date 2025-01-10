@@ -1,4 +1,4 @@
-import { runGame } from './index.js'; // Ajusta la ruta según esté en el mismo directorio
+import { runGame } from './index.js';
 
 const gameDescription = '¿Cuál es el resultado de la expresión?';
 

@@ -1,4 +1,6 @@
+import askUserName from './cli.js';
 import readlineSync from 'readline-sync';
+import { showWinMessage, showLoseMessage } from './messages.js';
 
 /**
  * Genera un número aleatorio entre min y max.
@@ -45,12 +47,24 @@ export const isPrime = (num) => {
 };
 
 /**
+ * Valida la respuesta del usuario y muestra el resultado.
+ */
+const validateAnswer = (userAnswer, correctAnswer, userName) => {
+    if (userAnswer.toString() === correctAnswer.toString()) {
+        console.log('¡Correcto!');
+        return true;
+    } else {
+        console.log(`'${userAnswer}' es incorrecto. La respuesta correcta era '${correctAnswer}'.`);
+        showLoseMessage();
+        return false;
+    }
+};
+
+/**
  * Juego: ¿Es Primo?
  */
 export const runPrimeGame = () => {
-    console.log('¡Bienvenido a Brain Games!');
-    const userName = readlineSync.question('¿Cuál es tu nombre? ');
-    console.log(`¡Hola, ${userName}!`);
+    const userName = askUserName();
     console.log('Responde "yes" si el número es primo, de lo contrario responde "no".');
 
     const roundsToWin = 3;
@@ -62,25 +76,20 @@ export const runPrimeGame = () => {
         const correctAnswer = isPrime(number) ? 'yes' : 'no';
         const userAnswer = readlineSync.question('Tu respuesta: ').toLowerCase();
 
-        if (userAnswer === correctAnswer) {
-            console.log('¡Correcto!');
+        if (validateAnswer(userAnswer, correctAnswer, userName)) {
             correctAnswers += 1;
         } else {
-            console.log(`'${userAnswer}' es incorrecto. La respuesta correcta era '${correctAnswer}'.`);
-            console.log(`¡Inténtalo de nuevo, ${userName}!`);
             return;
         }
     }
-    console.log(`¡Felicidades, ${userName}! Has ganado.`);
+    showWinMessage();
 };
 
 /**
  * Juego: Máximo Común Divisor
  */
 export const runGCDGame = () => {
-    console.log('¡Bienvenido a Brain Games!');
-    const userName = readlineSync.question('¿Cuál es tu nombre? ');
-    console.log(`¡Hola, ${userName}!`);
+    const userName = askUserName();
     console.log('Encuentra el máximo común divisor de los siguientes números.');
 
     const roundsToWin = 3;
@@ -93,25 +102,20 @@ export const runGCDGame = () => {
         const correctAnswer = findGCD(num1, num2);
         const userAnswer = readlineSync.question('Tu respuesta: ');
 
-        if (parseInt(userAnswer, 10) === correctAnswer) {
-            console.log('¡Correcto!');
+        if (validateAnswer(userAnswer, correctAnswer, userName)) {
             correctAnswers += 1;
         } else {
-            console.log(`'${userAnswer}' es incorrecto. La respuesta correcta era '${correctAnswer}'.`);
-            console.log(`¡Inténtalo de nuevo, ${userName}!`);
             return;
         }
     }
-    console.log(`¡Felicidades, ${userName}! Has ganado.`);
+    showWinMessage();
 };
 
 /**
  * Juego: Progresión Aritmética
  */
 export const runProgressionGame = () => {
-    console.log('¡Bienvenido a Brain Games!');
-    const userName = readlineSync.question('¿Cuál es tu nombre? ');
-    console.log(`¡Hola, ${userName}!`);
+    const userName = askUserName();
     console.log('¿Puedes adivinar el número faltante en la progresión?');
 
     const roundsToWin = 3;
@@ -126,15 +130,11 @@ export const runProgressionGame = () => {
         console.log(`Pregunta: ${progression.join(' ')}`);
         const userAnswer = readlineSync.question('Tu respuesta: ');
 
-        if (parseInt(userAnswer, 10) === hiddenNumber) {
-            console.log('¡Correcto!');
+        if (validateAnswer(userAnswer, hiddenNumber, userName)) {
             correctAnswers += 1;
         } else {
-            console.log(`'${userAnswer}' es incorrecto. La respuesta correcta era '${hiddenNumber}'.`);
-            console.log(`¡Inténtalo de nuevo, ${userName}!`);
             return;
         }
     }
-    console.log(`¡Felicidades, ${userName}! Has ganado.`);
+    showWinMessage();
 };
-

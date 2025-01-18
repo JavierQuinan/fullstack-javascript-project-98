@@ -30,3 +30,5 @@ Este juego desafía al usuario a identificar si un número es primo o no.
 Puedes ver una demostración del juego aquí:
 [Enlace a Asciinema](https://asciinema.org/a/juHGPYeQuzXDnvMCYrWtu7Ir1)
 
+![image](https://github.com/user-attachments/assets/9e93b828-7403-4069-94c0-e4571a2c2f9e)
+

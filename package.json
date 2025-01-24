@@ -12,12 +12,8 @@
     "brain-progression": "bin/brain-progression.js",
     "brain-prime": "bin/brain-prime.js"
   },
-  "scripts": {
-    "test": "jest --coverage",
-    "install": "npm ci",
-    "brain-games": "node bin/brain-games.js",
-    "publish-dry-run": "npm publish --dry-run",
-    "lint": "npx eslint ."
+"scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
@@ -40,16 +36,8 @@
     "readline-sync": "^1.4.10"
   },
   "devDependencies": {
-    "@babel/preset-env": "^7.26.0",
-    "@babel/register": "^7.25.9",
-    "@eslint/js": "^9.17.0",
-    "@typescript-eslint/eslint-plugin": "^8.19.1",
-    "@typescript-eslint/parser": "^8.19.1",
     "eslint": "^8.57.1",
-    "eslint-plugin-import": "^2.31.0",
-    "eslint-plugin-react": "^7.37.3",
-    "globals": "^15.14.0",
-    "jest": "^29.7.0",
-    "typescript": "^5.7.2"
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.31.0"
   }
 }

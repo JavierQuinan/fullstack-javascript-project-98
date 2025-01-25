@@ -1,18 +1,16 @@
-import { runGame } from './index.js';
+import runGame from './index.js';
+import { getRandomNumber } from './utils.js';
 
 const gameDescription = '¿Cuál es el resultado de la expresión?';
-
-/**
- * Genera un número aleatorio entre min y max.
- */
-const getRandomNumber = (min, max) => (
-  Math.floor(Math.random() * (max - min + 1)) + min
-);
 
 const operators = ['+', '-', '*'];
 
 /**
  * Calcula el resultado de la operación entre dos números.
+ * @param {number} a - Primer número.
+ * @param {number} b - Segundo número.
+ * @param {string} operator - Operador matemático.
+ * @returns {number} El resultado de la operación.
  */
 const calculate = (a, b, operator) => {
   switch (operator) {
@@ -29,6 +27,7 @@ const calculate = (a, b, operator) => {
 
 /**
  * Genera una ronda del juego.
+ * @returns {[string, string]} Una pregunta y la respuesta correcta.
  */
 const generateRound = () => {
   const num1 = getRandomNumber(1, 50);

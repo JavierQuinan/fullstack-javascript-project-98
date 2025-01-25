@@ -1,11 +1,9 @@
 import runGame from './index.js';
 import { showLoseMessage, showWinMessage } from './messages.js';
-
 /**
  * Genera un número aleatorio entre min y max.
  */
-export const getRandomNumber = (min, max) =>
-  Math.floor(Math.random() * (max - min + 1)) + min;
+export const getRandomNumber = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
 
 /**
  * Calcula el Máximo Común Divisor usando el Algoritmo de Euclides.

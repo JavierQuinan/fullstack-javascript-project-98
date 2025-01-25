@@ -12,5 +12,3 @@ export const showWinMessage = () => {
     console.log('¡Intentémoslo de nuevo, Tirion!');
   };
   
-  // Línea vacía al final
-  

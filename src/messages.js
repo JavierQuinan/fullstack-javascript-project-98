@@ -2,7 +2,7 @@
  * Muestra un mensaje de victoria.
  */
 export const showWinMessage = () => {
-    console.log('¡Ganaste! 🎉');
+    console.log('¡Felicidades, Tirion!');
 };
 
 /**

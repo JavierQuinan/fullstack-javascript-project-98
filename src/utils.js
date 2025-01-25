@@ -21,6 +21,19 @@ export const findGCD = (a, b) => {
 };
 
 /**
+ * Verifica si un número es primo.
+ */
+export const isPrime = (num) => {
+  if (num <= 1) return false;
+  for (let i = 2; i <= Math.sqrt(num); i += 1) {
+    if (num % i === 0) {
+      return false;
+    }
+  }
+  return true;
+};
+
+/**
  * Genera una progresión aritmética con un número oculto.
  */
 export const generateProgression = (start, step, length) => {
@@ -35,19 +48,6 @@ export const generateProgression = (start, step, length) => {
 };
 
 /**
- * Verifica si un número es primo.
- */
-export const isPrime = (num) => {
-  if (num <= 1) return false;
-  for (let i = 2; i <= Math.sqrt(num); i += 1) {
-    if (num % i === 0) {
-      return false;
-    }
-  }
-  return true;
-};
-
-/**
  * Valida la respuesta del usuario y muestra el resultado.
  */
 const validateAnswer = (userAnswer, correctAnswer) => {
@@ -58,6 +58,36 @@ const validateAnswer = (userAnswer, correctAnswer) => {
   console.log(`'${userAnswer}' es incorrecto. La respuesta correcta era '${correctAnswer}'.`);
   showLoseMessage();
   return false;
+};
+
+/**
+ * Juego: Máximo Común Divisor
+ */
+export const runGCDGame = () => {
+  console.log('Encuentra el máximo común divisor de los números dados.');
+
+  const roundsToWin = 3;
+  let correctAnswers = 0;
+
+  while (correctAnswers < roundsToWin) {
+    const num1 = getRandomNumber(1, 100);
+    const num2 = getRandomNumber(1, 100);
+    console.log(`Pregunta: ${num1} ${num2}`);
+    const correctAnswer = findGCD(num1, num2);
+    const userAnswer = readlineSync.question('Tu respuesta: ');
+
+    if (isNaN(userAnswer)) {
+      console.log(`'${userAnswer}' no es un número válido. Por favor, intenta de nuevo.`);
+      continue;
+    }
+
+    if (validateAnswer(userAnswer, correctAnswer)) {
+      correctAnswers += 1;
+    } else {
+      return;
+    }
+  }
+  showWinMessage();
 };
 
 /**
@@ -83,37 +113,6 @@ export const runPrimeGame = () => {
   }
   showWinMessage();
 };
-
-/**
- * Juego: Máximo Común Divisor
- */
-export const runGCDGame = () => {
-    console.log('Encuentra el máximo común divisor de los números dados.');
-  
-    const roundsToWin = 3;
-    let correctAnswers = 0;
-  
-    while (correctAnswers < roundsToWin) {
-      const num1 = getRandomNumber(1, 100);
-      const num2 = getRandomNumber(1, 100);
-      console.log(`Pregunta: ${num1} ${num2}`);
-      const correctAnswer = findGCD(num1, num2);
-      const userAnswer = readlineSync.question('Tu respuesta: ');
-  
-      // Validar si la respuesta es un número
-      if (isNaN(userAnswer)) {
-        console.log(`'${userAnswer}' no es un número válido. Por favor, intenta de nuevo.`);
-        continue;
-      }
-  
-      if (validateAnswer(userAnswer, correctAnswer)) {
-        correctAnswers += 1;
-      } else {
-        return;
-      }
-    }
-    showWinMessage();
-  };  
 
 /**
  * Juego: Progresión Aritmética

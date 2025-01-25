@@ -127,6 +127,9 @@ export const runPrimeGame = () => {
  * Juego: Progresión Aritmética
  */
 export const runProgressionGame = () => {
+  console.log("¡Bienvenido a Brain Games!");
+  const userName = readlineSync.question("¿Cuál es tu nombre? ");
+  console.log(`¡Hola, ${userName}!\n`);
   console.log("¿Qué número falta en la progresión?");
 
   const roundsToWin = 3;
@@ -145,11 +148,19 @@ export const runProgressionGame = () => {
     console.log(`Pregunta: ${progression.join(" ")}`);
     const userAnswer = readlineSync.question("Tu respuesta: ");
 
+    if (isNaN(userAnswer)) {
+      console.log(
+        `'${userAnswer}' no es un número válido. Por favor, intenta de nuevo.`
+      );
+      continue;
+    }
+
     if (validateAnswer(userAnswer, hiddenNumber)) {
       correctAnswers += 1;
     } else {
+      console.log(`¡Intentémoslo de nuevo, ${userName}!`);
       return;
     }
   }
-  showWinMessage();
+  console.log(`¡Felicidades, ${userName}!`);
 };

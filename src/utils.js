@@ -90,7 +90,7 @@ export const runPrimeGame = () => {
  */
 export const runGCDGame = () => {
     const userName = askUserName();
-    console.log('Encuentra el máximo común divisor de los siguientes números.');
+    console.log('Encuentra el máximo común divisor de los números dados.');
 
     const roundsToWin = 3;
     let correctAnswers = 0;

@@ -2,10 +2,18 @@ import { runGame } from './index.js';
 
 const gameDescription = '¿Cuál es el resultado de la expresión?';
 
-const getRandomNumber = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
+/**
+ * Genera un número aleatorio entre min y max.
+ */
+const getRandomNumber = (min, max) => (
+  Math.floor(Math.random() * (max - min + 1)) + min
+);
 
 const operators = ['+', '-', '*'];
 
+/**
+ * Calcula el resultado de la operación entre dos números.
+ */
 const calculate = (a, b, operator) => {
   switch (operator) {
     case '+':
@@ -19,6 +27,9 @@ const calculate = (a, b, operator) => {
   }
 };
 
+/**
+ * Genera una ronda del juego.
+ */
 const generateRound = () => {
   const num1 = getRandomNumber(1, 50);
   const num2 = getRandomNumber(1, 50);
@@ -28,9 +39,11 @@ const generateRound = () => {
   return [question, correctAnswer];
 };
 
+/**
+ * Ejecuta el juego de cálculo.
+ */
 const runCalcGame = () => {
   runGame(gameDescription, generateRound);
 };
 
 export default runCalcGame;
-

@@ -65,7 +65,7 @@ const validateAnswer = (userAnswer, correctAnswer, userName) => {
  */
 export const runPrimeGame = () => {
     const userName = askUserName();
-    console.log('Responde "yes" si el número es primo, de lo contrario responde "no".');
+    console.log('Responde "yes" si el número dado es primo. De lo contrario, responde "no".');
 
     const roundsToWin = 3;
     let correctAnswers = 0;

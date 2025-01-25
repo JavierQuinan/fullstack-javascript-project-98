@@ -2,4 +2,3 @@
 import { runPrimeGame } from '../src/utils.js';
 
 runPrimeGame();
-

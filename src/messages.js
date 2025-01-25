@@ -11,4 +11,6 @@ export const showWinMessage = () => {
   export const showLoseMessage = () => {
     console.log('¡Intentémoslo de nuevo, Tirion!');
   };
-    
+  
+  // Línea vacía al final
+  

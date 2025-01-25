@@ -1,4 +1,4 @@
-import { runGame } from './index.js';
+import runGame from './index.js'; // Cambiado de { runGame } a runGame
 import { getRandomNumber } from './utils.js';
 
 const gameDescription = 'Responde "yes" si el número es par, de lo contrario responde "no".';

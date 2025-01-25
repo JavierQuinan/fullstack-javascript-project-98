@@ -1,5 +1,5 @@
-import askUserName from './cli.js';
 import readlineSync from 'readline-sync';
+import askUserName from './cli.js';
 import { showWinMessage, showLoseMessage } from './messages.js';
 
 /**
@@ -13,10 +13,12 @@ export const getRandomNumber = (min, max) => (
  * Calcula el Máximo Común Divisor usando el Algoritmo de Euclides.
  */
 export const findGCD = (a, b) => {
-  while (b !== 0) {
-    [a, b] = [b, a % b];
+  let x = a;
+  let y = b;
+  while (y !== 0) {
+    [x, y] = [y, x % y];
   }
-  return a;
+  return x;
 };
 
 /**
@@ -75,7 +77,7 @@ export const runPrimeGame = () => {
     const correctAnswer = isPrime(number) ? 'yes' : 'no';
     const userAnswer = readlineSync.question('Tu respuesta: ').toLowerCase();
 
-    if (validateAnswer(userAnswer, correctAnswer, userName)) {
+    if (validateAnswer(userAnswer, correctAnswer)) {
       correctAnswers += 1;
     } else {
       return;
@@ -101,7 +103,7 @@ export const runGCDGame = () => {
     const correctAnswer = findGCD(num1, num2);
     const userAnswer = readlineSync.question('Tu respuesta: ');
 
-    if (validateAnswer(userAnswer, correctAnswer, userName)) {
+    if (validateAnswer(userAnswer, correctAnswer)) {
       correctAnswers += 1;
     } else {
       return;
@@ -129,7 +131,7 @@ export const runProgressionGame = () => {
     console.log(`Pregunta: ${progression.join(' ')}`);
     const userAnswer = readlineSync.question('Tu respuesta: ');
 
-    if (validateAnswer(userAnswer, hiddenNumber, userName)) {
+    if (validateAnswer(userAnswer, hiddenNumber)) {
       correctAnswers += 1;
     } else {
       return;

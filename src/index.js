@@ -7,7 +7,7 @@ const MAX_ROUNDS = 3;
  * @param {string} gameDescription - Descripción del juego.
  * @param {Function} generateRound - Función que genera una ronda del juego.
  */
-export const runGame = (gameDescription, generateRound) => {
+const runGame = (gameDescription, generateRound) => {
   console.log('¡Bienvenido a Brain Games!');
   const userName = readlineSync.question('¿Cuál es tu nombre? ');
   console.log(`¡Hola, ${userName}!\n`);
@@ -29,3 +29,5 @@ export const runGame = (gameDescription, generateRound) => {
 
   console.log(`¡Felicidades, ${userName}!`);
 };
+
+export default runGame;

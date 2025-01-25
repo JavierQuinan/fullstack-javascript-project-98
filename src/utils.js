@@ -88,26 +88,32 @@ export const runPrimeGame = () => {
  * Juego: Máximo Común Divisor
  */
 export const runGCDGame = () => {
-  console.log('Encuentra el máximo común divisor de los números dados.');
-
-  const roundsToWin = 3;
-  let correctAnswers = 0;
-
-  while (correctAnswers < roundsToWin) {
-    const num1 = getRandomNumber(1, 100);
-    const num2 = getRandomNumber(1, 100);
-    console.log(`Pregunta: ${num1} ${num2}`);
-    const correctAnswer = findGCD(num1, num2);
-    const userAnswer = readlineSync.question('Tu respuesta: ');
-
-    if (validateAnswer(userAnswer, correctAnswer)) {
-      correctAnswers += 1;
-    } else {
-      return;
+    console.log('Encuentra el máximo común divisor de los números dados.');
+  
+    const roundsToWin = 3;
+    let correctAnswers = 0;
+  
+    while (correctAnswers < roundsToWin) {
+      const num1 = getRandomNumber(1, 100);
+      const num2 = getRandomNumber(1, 100);
+      console.log(`Pregunta: ${num1} ${num2}`);
+      const correctAnswer = findGCD(num1, num2);
+      const userAnswer = readlineSync.question('Tu respuesta: ');
+  
+      // Validar si la respuesta es un número
+      if (isNaN(userAnswer)) {
+        console.log(`'${userAnswer}' no es un número válido. Por favor, intenta de nuevo.`);
+        continue;
+      }
+  
+      if (validateAnswer(userAnswer, correctAnswer)) {
+        correctAnswers += 1;
+      } else {
+        return;
+      }
     }
-  }
-  showWinMessage();
-};
+    showWinMessage();
+  };  
 
 /**
  * Juego: Progresión Aritmética

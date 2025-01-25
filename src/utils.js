@@ -101,27 +101,36 @@ export const runGCDGame = () => {
  * Juego: ¿Es Primo?
  */
 export const runPrimeGame = () => {
-  console.log(
-    'Responde "yes" si el número dado es primo. De lo contrario, responde "no".'
-  );
-
-  const roundsToWin = 3;
-  let correctAnswers = 0;
-
-  while (correctAnswers < roundsToWin) {
-    const number = getRandomNumber(1, 100);
-    console.log(`Pregunta: ${number}`);
-    const correctAnswer = isPrime(number) ? "yes" : "no";
-    const userAnswer = readlineSync.question("Tu respuesta: ").toLowerCase();
-
-    if (validateAnswer(userAnswer, correctAnswer)) {
-      correctAnswers += 1;
-    } else {
-      return;
+    console.log('¡Bienvenido a Brain Games!');
+    const userName = readlineSync.question('¿Cuál es tu nombre? ');
+    console.log(`¡Hola, ${userName}!\n`);
+    console.log('Responde "yes" si el número dado es primo. De lo contrario, responde "no".');
+  
+    const roundsToWin = 3;
+    let correctAnswers = 0;
+  
+    while (correctAnswers < roundsToWin) {
+      const number = getRandomNumber(1, 100);
+      console.log(`Pregunta: ${number}`);
+      const correctAnswer = isPrime(number) ? 'yes' : 'no';
+      const userAnswer = readlineSync.question('Tu respuesta: ').toLowerCase();
+  
+      if (userAnswer !== 'yes' && userAnswer !== 'no') {
+        console.log(`'${userAnswer}' no es una respuesta válida. Por favor, responde "yes" o "no".`);
+        continue;
+      }
+  
+      if (userAnswer === correctAnswer) {
+        console.log('¡Correcto!');
+        correctAnswers += 1;
+      } else {
+        console.log(`'${userAnswer}' es incorrecto. La respuesta correcta era '${correctAnswer}'.`);
+        console.log(`¡Intentémoslo de nuevo, ${userName}!`);
+        return;
+      }
     }
-  }
-  showWinMessage();
-};
+    console.log(`¡Felicidades, ${userName}!`);
+  };  
 
 /**
  * Juego: Progresión Aritmética

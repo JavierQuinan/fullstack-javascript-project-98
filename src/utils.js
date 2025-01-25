@@ -1,5 +1,4 @@
 import readlineSync from 'readline-sync';
-import askUserName from './cli.js';
 import { showWinMessage, showLoseMessage } from './messages.js';
 
 /**
@@ -65,7 +64,6 @@ const validateAnswer = (userAnswer, correctAnswer) => {
  * Juego: ¿Es Primo?
  */
 export const runPrimeGame = () => {
-  const userName = askUserName();
   console.log('Responde "yes" si el número dado es primo. De lo contrario, responde "no".');
 
   const roundsToWin = 3;
@@ -90,7 +88,6 @@ export const runPrimeGame = () => {
  * Juego: Máximo Común Divisor
  */
 export const runGCDGame = () => {
-  const userName = askUserName();
   console.log('Encuentra el máximo común divisor de los números dados.');
 
   const roundsToWin = 3;
@@ -116,7 +113,6 @@ export const runGCDGame = () => {
  * Juego: Progresión Aritmética
  */
 export const runProgressionGame = () => {
-  const userName = askUserName();
   console.log('¿Qué número falta en la progresión?');
 
   const roundsToWin = 3;

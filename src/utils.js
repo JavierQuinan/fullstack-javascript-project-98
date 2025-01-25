@@ -1,12 +1,11 @@
-import readlineSync from 'readline-sync';
-import { showWinMessage, showLoseMessage } from './messages.js';
+import readlineSync from "readline-sync";
+import { showWinMessage, showLoseMessage } from "./messages.js";
 
 /**
  * Genera un número aleatorio entre min y max.
  */
-export const getRandomNumber = (min, max) => (
-  Math.floor(Math.random() * (max - min + 1)) + min
-);
+export const getRandomNumber = (min, max) =>
+  Math.floor(Math.random() * (max - min + 1)) + min;
 
 /**
  * Calcula el Máximo Común Divisor usando el Algoritmo de Euclides.
@@ -43,7 +42,7 @@ export const generateProgression = (start, step, length) => {
   }
   const hiddenIndex = getRandomNumber(0, length - 1);
   const hiddenNumber = progression[hiddenIndex];
-  progression[hiddenIndex] = '..';
+  progression[hiddenIndex] = "..";
   return { progression, hiddenNumber };
 };
 
@@ -52,10 +51,12 @@ export const generateProgression = (start, step, length) => {
  */
 const validateAnswer = (userAnswer, correctAnswer) => {
   if (userAnswer.toString() === correctAnswer.toString()) {
-    console.log('¡Correcto!');
+    console.log("¡Correcto!");
     return true;
   }
-  console.log(`'${userAnswer}' es incorrecto. La respuesta correcta era '${correctAnswer}'.`);
+  console.log(
+    `'${userAnswer}' es incorrecto. La respuesta correcta era '${correctAnswer}'.`
+  );
   showLoseMessage();
   return false;
 };
@@ -64,7 +65,10 @@ const validateAnswer = (userAnswer, correctAnswer) => {
  * Juego: Máximo Común Divisor
  */
 export const runGCDGame = () => {
-  console.log('Encuentra el máximo común divisor de los números dados.');
+  console.log("¡Bienvenido a Brain Games!");
+  const userName = readlineSync.question("¿Cuál es tu nombre? ");
+  console.log(`¡Hola, ${userName}!\n`);
+  console.log("Encuentra el máximo común divisor de los números dados.");
 
   const roundsToWin = 3;
   let correctAnswers = 0;
@@ -74,27 +78,32 @@ export const runGCDGame = () => {
     const num2 = getRandomNumber(1, 100);
     console.log(`Pregunta: ${num1} ${num2}`);
     const correctAnswer = findGCD(num1, num2);
-    const userAnswer = readlineSync.question('Tu respuesta: ');
+    const userAnswer = readlineSync.question("Tu respuesta: ");
 
     if (isNaN(userAnswer)) {
-      console.log(`'${userAnswer}' no es un número válido. Por favor, intenta de nuevo.`);
+      console.log(
+        `'${userAnswer}' no es un número válido. Por favor, intenta de nuevo.`
+      );
       continue;
     }
 
     if (validateAnswer(userAnswer, correctAnswer)) {
       correctAnswers += 1;
     } else {
+      console.log(`¡Intentémoslo de nuevo, ${userName}!`);
       return;
     }
   }
-  showWinMessage();
+  console.log(`¡Felicidades, ${userName}!`);
 };
 
 /**
  * Juego: ¿Es Primo?
  */
 export const runPrimeGame = () => {
-  console.log('Responde "yes" si el número dado es primo. De lo contrario, responde "no".');
+  console.log(
+    'Responde "yes" si el número dado es primo. De lo contrario, responde "no".'
+  );
 
   const roundsToWin = 3;
   let correctAnswers = 0;
@@ -102,8 +111,8 @@ export const runPrimeGame = () => {
   while (correctAnswers < roundsToWin) {
     const number = getRandomNumber(1, 100);
     console.log(`Pregunta: ${number}`);
-    const correctAnswer = isPrime(number) ? 'yes' : 'no';
-    const userAnswer = readlineSync.question('Tu respuesta: ').toLowerCase();
+    const correctAnswer = isPrime(number) ? "yes" : "no";
+    const userAnswer = readlineSync.question("Tu respuesta: ").toLowerCase();
 
     if (validateAnswer(userAnswer, correctAnswer)) {
       correctAnswers += 1;
@@ -118,7 +127,7 @@ export const runPrimeGame = () => {
  * Juego: Progresión Aritmética
  */
 export const runProgressionGame = () => {
-  console.log('¿Qué número falta en la progresión?');
+  console.log("¿Qué número falta en la progresión?");
 
   const roundsToWin = 3;
   let correctAnswers = 0;
@@ -127,10 +136,14 @@ export const runProgressionGame = () => {
     const start = getRandomNumber(1, 20);
     const step = getRandomNumber(1, 10);
     const length = 10;
-    const { progression, hiddenNumber } = generateProgression(start, step, length);
+    const { progression, hiddenNumber } = generateProgression(
+      start,
+      step,
+      length
+    );
 
-    console.log(`Pregunta: ${progression.join(' ')}`);
-    const userAnswer = readlineSync.question('Tu respuesta: ');
+    console.log(`Pregunta: ${progression.join(" ")}`);
+    const userAnswer = readlineSync.question("Tu respuesta: ");
 
     if (validateAnswer(userAnswer, hiddenNumber)) {
       correctAnswers += 1;

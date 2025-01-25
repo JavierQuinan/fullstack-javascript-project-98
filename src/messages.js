@@ -9,5 +9,5 @@ export const showWinMessage = () => {
  * Muestra un mensaje de derrota.
  */
 export const showLoseMessage = () => {
-    console.log('Lo siento, perdiste. 😢');
+    console.log('¡Intentémoslo de nuevo, Tirion!');
 };

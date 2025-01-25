@@ -116,7 +116,7 @@ export const runGCDGame = () => {
  */
 export const runProgressionGame = () => {
     const userName = askUserName();
-    console.log('¿Puedes adivinar el número faltante en la progresión?');
+    console.log('¿Qué número falta en la progresión?');
 
     const roundsToWin = 3;
     let correctAnswers = 0;

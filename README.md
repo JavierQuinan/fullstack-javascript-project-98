@@ -74,10 +74,6 @@ Encuentra el máximo común divisor entre dos números aleatorios.
 brain-gcd
 ```
 
-**[📺 Ver Demo](https://asciinema.org/a/egJpUsit4zhnAFRz5AOBcFmFZ)**
-
----
-
 ### 4. 📊 Brain Progression - Progresión Aritmética
 Encuentra el número faltante en una progresión aritmética.
 

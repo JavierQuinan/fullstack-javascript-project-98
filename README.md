@@ -60,20 +60,12 @@ Determina si un número es par o impar.
 brain-even
 ```
 
-**[📺 Ver Demo](https://asciinema.org/a/gHWYrpbjogKeKBrTtHNQKQM4c)**
-
----
-
 ### 2. 🧮 Brain Calc - Calculadora
 Resuelve operaciones matemáticas básicas (suma, resta, multiplicación).
 
 ```bash
 brain-calc
 ```
-
-**[📺 Ver Demo](https://asciinema.org/a/vD2LNN0AASiuIpyPQV5sKazv3)**
-
----
 
 ### 3. 🔢 Brain GCD - Máximo Común Divisor
 Encuentra el máximo común divisor entre dos números aleatorios.
@@ -93,8 +85,6 @@ Encuentra el número faltante en una progresión aritmética.
 brain-progression
 ```
 
-**[📺 Ver Demo](https://asciinema.org/a/im7mJmfBS1KyMWE6yfOkWlHAY)**
-
 ![Demo](https://github.com/user-attachments/assets/3903ddf6-b28a-484d-a5b0-1b79bc85a1b4)
 
 ---
@@ -105,8 +95,6 @@ Identifica si un número es primo o no.
 ```bash
 brain-prime
 ```
-
-**[📺 Ver Demo](https://asciinema.org/a/juHGPYeQuzXDnvMCYrWtu7Ir1)**
 
 ---
 
@@ -146,6 +134,6 @@ Las contribuciones son bienvenidas. Por favor, abre un issue primero para discut
 
 <div align="center">
 
-**Desarrollado con ❤️ usando JavaScript y Node.js**
+**Desarrollado con JavaScript y Node.js**
 
 </div>

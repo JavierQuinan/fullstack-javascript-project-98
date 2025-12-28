@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎮 Brain Games - Juegos Mentales</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>🎮 Brain Games</h1>
+            <p class="subtitle">Entrena tu cerebro con desafíos matemáticos y lógicos</p>
+            <div class="tech-badges">
+                <span class="badge javascript">JavaScript</span>
+                <span class="badge nodejs">Node.js</span>
+                <span class="badge git">Git</span>
+            </div>
+        </header>
+
+        <!-- Pantalla de Bienvenida -->
+        <div id="welcome-screen" class="screen active">
+            <div class="welcome-card">
+                <h2>¡Bienvenido a Brain Games!</h2>
+                <div class="input-group">
+                    <label for="player-name">¿Cuál es tu nombre?</label>
+                    <input type="text" id="player-name" placeholder="Ingresa tu nombre" autofocus>
+                </div>
+                <button class="btn btn-primary" onclick="startGame()">Comenzar</button>
+            </div>
+        </div>
+
+        <!-- Selección de Juegos -->
+        <div id="game-selection" class="screen">
+            <h2>Selecciona un juego, <span id="greeting-name"></span>!</h2>
+            <div class="games-grid">
+                <div class="game-card" onclick="selectGame('even')">
+                    <div class="game-icon">🎲</div>
+                    <h3>Brain Even</h3>
+                    <p>Números Pares</p>
+                    <span class="difficulty easy">Fácil</span>
+                </div>
+                <div class="game-card" onclick="selectGame('calc')">
+                    <div class="game-icon">🧮</div>
+                    <h3>Brain Calc</h3>
+                    <p>Calculadora</p>
+                    <span class="difficulty medium">Medio</span>
+                </div>
+                <div class="game-card" onclick="selectGame('gcd')">
+                    <div class="game-icon">🔢</div>
+                    <h3>Brain GCD</h3>
+                    <p>Máximo Común Divisor</p>
+                    <span class="difficulty hard">Difícil</span>
+                </div>
+                <div class="game-card" onclick="selectGame('progression')">
+                    <div class="game-icon">📊</div>
+                    <h3>Brain Progression</h3>
+                    <p>Progresión Aritmética</p>
+                    <span class="difficulty medium">Medio</span>
+                </div>
+                <div class="game-card" onclick="selectGame('prime')">
+                    <div class="game-icon">🔍</div>
+                    <h3>Brain Prime</h3>
+                    <p>Números Primos</p>
+                    <span class="difficulty hard">Difícil</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pantalla de Juego -->
+        <div id="game-screen" class="screen">
+            <div class="game-header">
+                <h3 id="game-title"></h3>
+                <p id="game-instructions"></p>
+            </div>
+            
+            <div class="progress-bar">
+                <div class="progress-fill" id="progress-fill"></div>
+            </div>
+            
+            <div class="score-board">
+                <div class="score-item">
+                    <span>Pregunta</span>
+                    <span id="question-number">1/3</span>
+                </div>
+                <div class="score-item">
+                    <span>Correctas</span>
+                    <span id="correct-count">0</span>
+                </div>
+            </div>
+
+            <div class="question-card">
+                <p class="question-label">Pregunta:</p>
+                <h2 id="question-text" class="question-text"></h2>
+                <div class="input-group">
+                    <input type="text" id="answer-input" placeholder="Tu respuesta" autofocus>
+                </div>
+                <button class="btn btn-primary" onclick="submitAnswer()">Responder</button>
+            </div>
+
+            <div id="feedback" class="feedback"></div>
+        </div>
+
+        <!-- Pantalla de Resultados -->
+        <div id="result-screen" class="screen">
+            <div class="result-card">
+                <div id="result-icon" class="result-icon"></div>
+                <h2 id="result-title"></h2>
+                <p id="result-message"></p>
+                <div class="result-stats">
+                    <div class="stat">
+                        <span class="stat-value" id="final-correct">0</span>
+                        <span class="stat-label">Correctas</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-value">3</span>
+                        <span class="stat-label">Total</span>
+                    </div>
+                </div>
+                <div class="result-actions">
+                    <button class="btn btn-secondary" onclick="backToSelection()">Otro Juego</button>
+                    <button class="btn btn-primary" onclick="restartGame()">Reintentar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>Desarrollo con JavaScript y Node.js</p>
+        <p class="author">© 2025 Francisco Quinteros</p>
+    </footer>
+
+    <script src="game.js"></script>
+</body>
+</html>
